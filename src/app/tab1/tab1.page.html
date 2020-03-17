@@ -1,9 +1,23 @@
 
 <ion-header>
-<h1 align="center">ระบบควบคุมความชื้น </h1> 
+<h1 align="center">ระบบควบคุมความชื้น <span>กลุ่ม 8</span></h1> 
 </ion-header>
 <ion-content>
+  <div align="center">
+    <span class="">
+      <!-- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAREAAAC5CAMAAAA4cvuLAAAAyVBMVEX///8AMZzeIRDdAADun5fI0Of76eTGxsb/+/v39/cAMJwAI5dGTqTL0NPlZl30/PuQj47zx8Xw9Px0fbnNz86XmZilpaXFxMjb3dv09PkAAJKvtdX99PTk5OXusK3j3d7a4NnU3tyRm5iKi4r///TkZlfe3Nn///rt6+ynoqC0ravIv7/r5uPHyMTT09Psu7WSkJb11c+8zMz+++rJwthkcbTJwcmwq9a0vdk7QZ0xOpvd6fO9y8Lvsqjl1NzxsZLkU0nhQTLn/v/NtVqxAAADOUlEQVR4nO3d61LTQACG4UWUtp6KmmqKlLSInKkIgufj/V+Um82hndcLSEbeZ4b8YPiR+ebb3SSlmzAsjTSdlj9RGB3P8llRzGbzeMjTIY+H+WH5q8P69zj8X3+WzxpFUcREZoOXqp2cnJ6dh2yQDVS6iLZPliHLg1rbk2W4LcLWM5XejcLl5El4lYe9TSW7sSNZlcg9RSZCJkImQiZCTSILE6nZEbIjZCLkqCETIUcN2REyETIRch4hEyFHDZkI1YkMHDUNO0ImQiZCziNkR2g9ESVtIu/vKxlWicy7/jy+T1IiRddn0SfVnd5w2PV59Ed976tWuh7xf4zWVGvNwUHX59EfrjXkWkP1WjPq+jz6o75mVct5hKp5xLVmxSs0ctRQlYj3NSspkcOuz6JP6lFz1PV59EfVkSMTabnWkGsNObOSiZAzK1X3viay4lpD9VrjVXzLmZWq5yNjn4+0ykSuirD7XMl1SuRbET7cvFB0M0qJ3M7D652Hinam1aecZSIbXZ9MH2zUicTV9+POhqKmI3nZEW2YyL+aUWMiDTtCdoTsCNkRsiNkR8iOkB0hO0J2hOwI2RGyI2RHyI6QiZCJkImQiZCJkImQiZCJkImQiZCJkImQiZCJkImQT4zIjpAdITtCdoTsCNkRsiNkR8iOkB0hO0J2hOwI2RGyI2RHyI6QHSE7QnaE1jvySNGqI58+P1b0pUrkdha+PlAyDZOYyMWh+yo2jlMi34ojE6lVu20M3Pm6dZASOZu719WK+6GROzvR9n7af8T94lt1ImqlRBw1a1Ii7qu4JiWycJ/nFd/oQ/VupF7Ft9znmbxCIztCvq2F3NWYfOsT+bYW8u1x5FpDvoWSHDXk6kuuNeSoIdcaqjpytLulpO3I3qaS3ea+Zm/znqImkYWJ1OwI1YkM7EjDjpCJkImQaw3ZETIRMhFyHiE7QiZCjhoyEXLUkImQTwPIjpCJkImQ8wjZEWo6Uoy/m0hSJ3L14+Bn15+l9UX1Xc6rOGp+Pb3r3pZ+b1Xf5VyMx+OhSn9iIsuQLUK4vh7fddPpdDQeh0lM5Px0//Jy+857U5mcFWGaL5dZ9kRZlg0Gi3z0F2XvKM7LxpqtAAAAAElFTkSuQmCC" alt=""> -->
+     <img height="100px" width="300px" src="https://miro.medium.com/max/4800/1*gx3BPJRUyh6hRo_cYab0uQ.jpeg" alt="">
+      
+     <!-- <span style="color: red;">ก</span>
+      <span style="color: rgb(218, 214, 214);">ลุ่</span>
+      <span style="color: blue;">ม</span>
+      <span style="color: rgb(218, 214, 214);">ที่</span>
+      &nabla;
+      <span style="color: red;">8</span> -->
   
+  
+  </span>
+  </div>
   <div align="center">
     {{status}}
     <h3><span style="color: red;">สถานะ :</span>   {{ Sw_time == true ? "เปิด" : "ปิด" }}</h3>
@@ -30,7 +44,19 @@
            thick="20"
            size="150" >
 </ngx-gauge>
+<ion-card>
+  <h4> ตั้งค่าความชื้น </h4>
+  <h4>{{tae1+"°"}} </h4>
 
+  <!-- <ion-toggle color="dark"  [(ngModel)]="getsw" (ionChange)="getsws(aa.value)" #aa ></ion-toggle> -->
+  <ion-item>
+    <ion-range min="0" max="100" step="2" (ionChange)="gettmp(val.value)" #val>
+      <ion-icon size="small" name="thermometer-outline" slot="start"></ion-icon>
+      <ion-icon name="thermometer-outline" slot="end"></ion-icon>
+    
+    </ion-range>
+  </ion-item>
+</ion-card>
 
 
 <!-- 

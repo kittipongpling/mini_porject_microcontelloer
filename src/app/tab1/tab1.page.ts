@@ -12,8 +12,14 @@ export class Tab1Page implements OnInit{
   public now: Date = new Date();
   public ta;
   public tg;
- 
+
+  public settmp:any=0;
+  public gettmp0:any=0;
+
+
   public timeString;
+
+
   
   public status:boolean = false;
   public Sw_time:boolean = false;
@@ -60,6 +66,13 @@ export class Tab1Page implements OnInit{
   
   ngOnInit(){
     this.fd
+    .object("set/temp")
+    .valueChanges()
+    .subscribe((value: any) => {
+      //console.log(value);
+      this.gettmp0 = value;
+    });
+    this.fd
       .object("/sw/ON-OFF")
       .valueChanges()
       .subscribe((value: boolean) => { //subscribe ติดตามค่า
@@ -78,7 +91,7 @@ export class Tab1Page implements OnInit{
     // console.log(sessionStorage.getItem('sessionData'));
     // ********************************* แสดงค่า ********************
     this.fd
-       .object("/temp")
+       .object("set/tmp")
        .valueChanges()
        .subscribe((value) =>{
         this.gaugeValue=value;
@@ -86,14 +99,31 @@ export class Tab1Page implements OnInit{
         console.log(this.ta);
        })
     this.fd
-       .object("/moisture")
+       .object("set/faran")
        .valueChanges()
        .subscribe((value) =>{
         this.tae1=value;
         this.tg = value;
         console.log(this.tg);
        })
+       this.fd
+       .object("set/faran")
+       .valueChanges()
+       .subscribe((value: any) => {
+         //console.log(value);
+         this.settmp = value;
+       });
+       
 
+  }
+  public gettmp(tmp){
+    this.settmp = tmp;
+    this.fd
+    .object("set/faran")
+    .set(this.settmp)
+    .then(() => {
+    });
+    console.log(this.settmp)
   }
   getuser(){
     localStorage.setItem("kititpong",'');

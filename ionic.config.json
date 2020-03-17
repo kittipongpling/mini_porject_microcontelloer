@@ -1,5 +1,7 @@
 {
   "name": "heelo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

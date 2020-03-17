@@ -18,12 +18,12 @@ import { StorageModule } from '@ngx-pwa/local-storage';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBDXyJ_yCBCRoAsTm4zo8obkVPvm7tqOJ4",
-  authDomain: "micro-f4698.firebaseapp.com",
-  databaseURL: "https://micro-f4698.firebaseio.com",
-  projectId: "micro-f4698",
-  storageBucket: "micro-f4698.appspot.com",
-  messagingSenderId: "805102491106",
-  appId: "1:805102491106:web:a0b0295b444f41ec8715bb"
+    authDomain: "micro-f4698.firebaseapp.com",
+    databaseURL: "https://micro-f4698.firebaseio.com",
+    projectId: "micro-f4698",
+    storageBucket: "micro-f4698.appspot.com",
+    messagingSenderId: "805102491106",
+    appId: "1:805102491106:web:a0b0295b444f41ec8715bb"
 };
 
 @NgModule({
