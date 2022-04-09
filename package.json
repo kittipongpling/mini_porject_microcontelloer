@@ -28,7 +28,7 @@
     "cordova-android": "8.1.0",
     "core-js": "^2.5.4",
     "firebase": "^7.8.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-gauge": "^1.0.0-beta.11",
     "rxjs": "~6.5.1",
     "set-interval": "^2.0.3",
